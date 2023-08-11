@@ -65,7 +65,13 @@ function App() {
   }
 
   const deleteExperienceItem = (e) => {
-
+    let id = e.target.parentElement.getAttribute('data-key');
+    
+    setCV(
+      {
+        ...cv,
+        experience: cv.experience.filter(item => item.id != id),
+    })
   }
 
   const addEducationItem = () => {
