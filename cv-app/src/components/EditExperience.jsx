@@ -5,7 +5,7 @@ function EditExperience({experience, updateExperienceItem, deleteExperienceItem,
         {
             experience.map((item) => {
                 return (
-                    <div key={item.id}>
+                    <div key={item.id} data-key={item.id}>
                         <input type="text" onChange={updateExperienceItem} name="company" placeholder="Company name" value={item.company}/>
                         <input type="text" onChange={updateExperienceItem} name="position" placeholder="Position" value={item.position}/>
                         <input type="text" onChange={updateExperienceItem} name="description" placeholder="Description" value={item.description}/>
