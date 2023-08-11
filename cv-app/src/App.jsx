@@ -10,7 +10,7 @@ function App() {
     general: {
       name:'',
       email:'',
-      phone:'',
+      number:'',
     },
     education: [],
     experience: []
@@ -21,15 +21,50 @@ function App() {
     setCurrentView(newView); 
   }
 
+  const updateGeneral = (e) => {
+    setCV({
+        ...cv,
+        general: {
+          ...cv.general,
+          [e.target.name]: e.target.value,
+        }
+      }
+    )
+  }
+
+  const updateExperienceItem = (e) => {
+
+  }
+
+  const updateEducationItem = (e) => {
+
+  }
+
+  const deleteExperienceItem = (e) => {
+
+  }
+
+  const deleteEducationItem = (e) => {
+
+  }
+
+  const addExperienceItem = (e) => {
+
+  }
+
+  const addEducationItem = (e) => {
+
+  }
+
 
   return (
     <>
       <h1>CV App</h1>
       <button onClick={changeView}>{currentView}</button>
       <div id="cv">
-      {(currentView === 'Edit') ? <Preview cv={cv}/> : <Edit cv={cv}/> }
-      {console.log(cv)}
+      {(currentView === 'Edit') ? <Preview cv={cv}/> : <Edit cv={cv} updateGeneral={updateGeneral} updateExperienceItem={updateExperienceItem} deleteExperienceItem={deleteExperienceItem} addExperienceItem={addExperienceItem} updateEducationItem={updateEducationItem} deleteEducationItem={deleteEducationItem} addEducationItem={addEducationItem}/> }
       </div>
+      {console.log(cv)}
     </>
   )
 }
