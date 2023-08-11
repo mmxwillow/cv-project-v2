@@ -48,7 +48,20 @@ function App() {
   }
 
   const updateExperienceItem = (e) => {
+    let id = e.target.parentElement.getAttribute('data-key');
 
+    setCV(
+      {
+        ...cv,
+        experience: cv.experience.map(item => {
+          if(item.id == id){
+            return {...item, [e.target.name]: e.target.value};
+          } else {
+            return item;
+          }
+        })
+      }
+    )
   }
 
   const deleteExperienceItem = (e) => {
@@ -103,7 +116,6 @@ function App() {
       <div id="cv">
       {(currentView === 'Edit') ? <Preview cv={cv}/> : <Edit cv={cv} updateGeneral={updateGeneral} updateExperienceItem={updateExperienceItem} deleteExperienceItem={deleteExperienceItem} addExperienceItem={addExperienceItem} updateEducationItem={updateEducationItem} deleteEducationItem={deleteEducationItem} addEducationItem={addEducationItem}/> }
       </div>
-      {console.log(cv.education)}
     </>
   )
 }
