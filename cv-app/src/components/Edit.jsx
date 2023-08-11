@@ -1,6 +1,14 @@
+import EditGeneral from "./EditGeneral";
+import EditEducation from "./EditEducation";
+import EditExperience from "./EditExperience";
+
 function Edit(){
     return (
-        <div>Edit section</div>
+        <>
+        <EditGeneral />
+        <EditEducation />
+        <EditExperience />
+        </>
     )
 }
 
