@@ -76,6 +76,13 @@ function App() {
   }
 
   const deleteEducationItem = (e) => {
+    let id = e.target.parentElement.getAttribute('data-key');
+    
+    setCV(
+      {
+        ...cv,
+        education: cv.education.filter(item => item.id != id),
+    })
   }
 
 
