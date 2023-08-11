@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import Preview from './components/Preview'
 import Edit from './components/Edit'
 import './styles/App.css'
@@ -32,11 +33,11 @@ function App() {
     )
   }
 
-  const updateExperienceItem = (e) => {
+  const addExperienceItem = (e) => {
 
   }
 
-  const updateEducationItem = (e) => {
+  const updateExperienceItem = (e) => {
 
   }
 
@@ -44,16 +45,37 @@ function App() {
 
   }
 
+  const addEducationItem = () => {
+    const emptyItem = {
+      id: uuidv4(),
+      name: '',
+      title: '',
+      date: '',
+    }
+    setCV({
+        ...cv,
+        education: [...cv.education,emptyItem],
+    })
+  }
+
+  const updateEducationItem = (e) => {
+    let id = e.target.parentElement.getAttribute('data-key');
+
+    setCV(
+      {
+        ...cv,
+        education: cv.education.map(item => {
+          if(item.id == id){
+            return {...item, [e.target.name]: e.target.value};
+          } else {
+            return item;
+          }
+        })
+      }
+    )
+  }
+
   const deleteEducationItem = (e) => {
-
-  }
-
-  const addExperienceItem = (e) => {
-
-  }
-
-  const addEducationItem = (e) => {
-
   }
 
 
@@ -64,7 +86,7 @@ function App() {
       <div id="cv">
       {(currentView === 'Edit') ? <Preview cv={cv}/> : <Edit cv={cv} updateGeneral={updateGeneral} updateExperienceItem={updateExperienceItem} deleteExperienceItem={deleteExperienceItem} addExperienceItem={addExperienceItem} updateEducationItem={updateEducationItem} deleteEducationItem={deleteEducationItem} addEducationItem={addEducationItem}/> }
       </div>
-      {console.log(cv)}
+      {console.log(cv.education)}
     </>
   )
 }
