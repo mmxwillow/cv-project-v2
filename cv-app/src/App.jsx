@@ -34,7 +34,17 @@ function App() {
   }
 
   const addExperienceItem = (e) => {
-
+    const emptyItem = {
+      id: uuidv4(),
+      company: '',
+      position: '',
+      description: '',
+      date: '',
+    }
+    setCV({
+        ...cv,
+        experience: [...cv.experience,emptyItem],
+    })
   }
 
   const updateExperienceItem = (e) => {
