@@ -2,12 +2,12 @@ import EditGeneral from "./EditGeneral";
 import EditEducation from "./EditEducation";
 import EditExperience from "./EditExperience";
 
-function Edit(){
+function Edit({cv}){
     return (
         <>
-        <EditGeneral />
-        <EditEducation />
-        <EditExperience />
+        <EditGeneral general={cv.general}/>
+        <EditEducation education={cv.education}/>
+        <EditExperience experience={cv.experience}/>
         </>
     )
 }
