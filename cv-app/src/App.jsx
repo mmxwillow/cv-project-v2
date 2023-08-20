@@ -33,7 +33,7 @@ function App() {
     )
   }
 
-  const addExperienceItem = (e) => {
+  const addExperienceItem = () => {
     const emptyItem = {
       id: uuidv4(),
       company: '',
