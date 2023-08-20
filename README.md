@@ -1,5 +1,5 @@
 # CV App using React + Vite 
-## View Live [on Netlify]((here))
+## View Live [on Netlify](https://mmxwillow-cv-appv2.netlify.app/)
 
 
 ## What I used:
