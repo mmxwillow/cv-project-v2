@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Syne:wght@400;500;600&display=swap');
+
+:root {
+    --text: #000000;
+    --background: #fdfcfd;
+    --primary: #725982;
+    --secondary: #d5e7e0;
+    --accent: #46acb9;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root{
+        --text: #fdfcfd;
+        --background: #191919;
+        --primary: #725982;
+        --secondary: #111;
+        --accent: #b5dee3;
+    }
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+  }
+  
+  html {
+    color-scheme: light dark;
+  }
+
+  h1, h2 {
+    font-family: Syne;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  body{
+    font-family: Inter, sans-serif;
+    padding: 2rem 0;
+    background-color: var(--secondary);
+    color: var(--text);
+  }
+  
+  button{
+    padding: 0.2rem 1rem;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    border:1px solid var(--primary);
+  }
+  
+  input{
+    border:none;
+    border-block-end: 1px solid var(--accent);
+    color: var(--text);
+    padding:0.2rem 1rem;
+    background: none;
+  }
+  
+  .App {
+    display: grid;
+    grid-template-columns: clamp(200px, 90vw, 550px);
+    gap:1rem;
+    place-content: center;
+    text-align: center;
+  }
+  
+  h2{
+    border-bottom: 1px solid var(--accent);
+  }
+  
+  #cv{
+    padding:2rem;
+    aspect-ratio: 1/1.414;
+    background-color: var(--background);
+    border-radius: 1rem;
+  }
+  
+  #cv>div{
+    padding-bottom: 2rem;
+  }
+  
+  #cv>div, .education>div, .experience>div{
+    display:grid;
+    gap:1rem;
+  }
+  
+  .general{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .general>h2{
+    grid-column: span 2;
+  }
+  
+  .general>div{
+    display:flex;
+    justify-content: center;
+    line-height: 0.9;
+  }
+  
+  .education-item, .experience-item{
+    display:grid;
+    grid-template-columns: 1fr min-content;
+    text-align: left;
+    gap:0 !important;
+  }
+  
+  .education-item>div:first-child,
+  .experience-item>div:first-child{
+    font-size: 1.1rem;
+    font-weight: bold;
+    grid-column: span 2;
+    color: var(--accent);
+  }
+
+  .experience-item>div:last-child{
+    grid-column: span 2;
+    font-weight: 300;
+    text-align: justify;
+  }
+
+  .education-item>div,
+  .experience-item>div{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  svg{
+    margin: 0 0.5rem;
+  }
+  
+  
