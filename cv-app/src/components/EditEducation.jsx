@@ -6,9 +6,9 @@ function EditEducation({education, updateEducationItem, deleteEducationItem, add
                 education.map((item) => {
                     return (
                         <div key={item.id} data-key={item.id}>
-                            <input type="text" onChange={updateEducationItem} name="name" placeholder="School name" value={item.name}/>
-                            <input type="text" onChange={updateEducationItem} name="title" placeholder="Study title" value={item.title}/>
-                            <input type="text" onChange={updateEducationItem} name="date" placeholder="Date" value={item.date}/>
+                            <input type="text" onChange={updateEducationItem} name="name" placeholder="School name" value={item.name} maxLength={50}/>
+                            <input type="text" onChange={updateEducationItem} name="title" placeholder="Study title" value={item.title} maxLength={50}/>
+                            <input type="text" onChange={updateEducationItem} name="date" placeholder="Date" value={item.date} maxLength={20}/>
                             <button onClick={deleteEducationItem}>Delete section</button>
                         </div>
                     )
